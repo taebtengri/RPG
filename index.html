@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Winter is coming</title>
+		<link rel="stylesheet" type="text/css" href="style/reset.css">
+		<link rel="stylesheet" type="text/css" href="style/style.css">
+		<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=MedievalSharp" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+			<h1>
+			<img src="http://fontmeme.com/permalink/170222/f848183301125e2f48a5117ed74145c3.png" alt="game-of-thrones-font" border="0">
+			</h1>
+		</div>
+		<div class="choose">
+			<h1>
+				Choose your character:
+			</h1>
+		</div>
+		<div class="characters">
+			<div class ="jon character">
+				<h2>
+					Jon Snow
+				</h2>
+				<img src="images/jon.jpg" height="200px">
+			</div>
+			<div class="balon character">
+				<h2>
+					Balon Greyjoy
+				</h2>
+				<img src="images/balon.jpg" height="200px">
+			</div>
+			<div class="jamie character">
+				<h2>
+					Jamie Lannister
+				</h2>
+				<img src="images/jamie.jpg" height="200px">
+			</div>
+			<div class="loras character">
+				<h2>
+					Loras Tyrell
+				</h2>
+				<img src="images/loras.jpg" height="200px">
+			</div>
+			<div class="oberyn character">
+				<h2>
+					Oberyn Martell
+				</h2>
+				<img src="images/oberyn.jpg" height="200px">
+			</div>
+			<div class="stannis character">
+				<h2>
+					Stannis Baratheon
+				</h2>
+				<img src="images/stannis.jpg" height="200px">
+			</div>
+		</div>
+		<br>
+	<div class="attacker left third">
+		<h1>
+			Attacker:
+		</h1>
+	</div>
+	<br>
+	<div class="defender left third">
+		<h1>
+			Defender:
+		</h1>
+	</div>
+	<div class="left third"><button id="fight" class="button left third" width="50px">FIGHT!</button></div>
+	<div class="scores right">
+		
+			<h1> Attacker HP left:<h1 id="atthp"></h1>  </h1><p>
+			<h1> Defender HP left: <h1 id="defhp"></h1>  </h1>
+		
+		
+	</div>
+
+
+	<script type="text/javascript">
+
+$( document ).ready(function() {
+    
+
+		var atthp = 0;
+		var basepow = 0;
+		var defhp = 0;
+		var attpow = 0;
+		var defpow = 0;
+		var role = 0;
+		var wincount = 0;
+		var sound = new Audio ("b.mp3");
+		sound.play();
+
+		var jon = {
+		power: 2,
+		hp: 100,
+		}
+
+
+		var balon = {
+		power: 1,
+		hp: 400,
+		}
+
+
+		var jamie = {
+		power: 2,
+		hp: 150,
+		}
+
+
+		var loras = {
+		power: 5,
+		hp: 80,
+		}
+
+
+		var oberyn = {
+		power: 3,
+		hp: 200,
+		}
+
+
+		var stannis = {
+		power: 70,
+		hp: 70,
+		}
+
+	alert("Make your choice")
+	
+	function toattack(x) {
+
+	$("."+x).appendTo( $( ".attacker" ) );
+	}
+	
+	function todefence(x) {
+
+	$("."+x).appendTo( $( ".defender" ) );
+	}
+	
+
+
+
+	
+
+	
+
+	$('.jon').click(function() {
+	if (role == 0) {
+  			toattack("jon");
+  			role++;
+  			atthp = jon.hp;
+  			$("#atthp").text("" + atthp);
+  			attpow = jon.power;
+  			basepow = attpow;
+  			}
+	else if (role == 1) {
+			todefence("jon");
+			role++;
+			defhp = jon.hp;
+			$("#defhp").text("" + defhp);
+			defpow = jon.power;
+	}
+	});
+
+	$('.jamie').click(function() {
+	if (role == 0) {
+  			toattack("jamie");
+  			role++;
+  			atthp = jamie.hp;
+  			$("#atthp").text("" + atthp);
+  			attpow = jamie.power;
+  			basepow = attpow;
+  			}
+	else if (role == 1) {
+			todefence("jamie");
+			role++;
+			defhp = jamie.hp;
+			$("#defhp").text("" + defhp);
+			defpow = jamie.power;
+	}
+	});
+
+	$('.balon').click(function() {
+	if (role == 0) {
+  			toattack("balon");
+  			role++;
+  			atthp = balon.hp;
+  			$("#atthp").text("" + atthp);
+  			attpow = balon.power;
+  			basepow = attpow;
+  			}
+	else if (role == 1) {
+			todefence("balon");
+			role++;
+			defhp = balon.hp;
+			$("#defhp").text("" + defhp);
+			defpow = balon.power;
+	}
+	});
+
+	$('.loras').click(function() {
+	if (role == 0) {
+  			toattack("loras");
+  			role++;
+  			atthp = loras.hp;
+  			$("#atthp").text("" + atthp);
+  			attpow = loras.power;
+  			basepow = attpow;
+  			}
+	else if (role == 1) {
+			todefence("loras");
+			role++;
+			defhp = loras.hp;
+			$("#defhp").text("" + defhp);
+			defpow = loras.power;
+	}
+	});
+
+	$('.stannis').click(function() {
+	if (role == 0) {
+  			toattack("stannis");
+  			role++;
+  			atthp = stannis.hp;
+  			$("#atthp").text("" + atthp);
+  			attpow = stannis.power;
+  			basepow = attpow;
+  			}
+	else if (role == 1) {
+			todefence("stannis");
+			role++;
+			defhp = stannis.hp;
+			$("#defhp").text("" + defhp);
+			defpow = stannis.power;
+	}
+	});
+
+	$('.oberyn').click(function() {
+	if (role == 0) {
+  			toattack("oberyn");
+  			role++;
+  			atthp = oberyn.hp;
+  			$("#atthp").text("" + atthp);
+  			attpow = oberyn.power;
+  			basepow = attpow;
+  			}
+	else if (role == 1) {
+			todefence("oberyn");
+			role++;
+			defhp = oberyn.hp;
+			$("#defhp").text("" + defhp);
+			defpow = oberyn.power;
+	}
+	});
+	
+
+$("#fight").on("click", function() {
+	attpow += basepow;
+	defhp -= attpow;
+		$("#defhp").text("" + defhp);
+	atthp -= defpow;
+			$("#atthp").text("" + atthp);
+			if (atthp <= 0) {
+			alert ("Game Over!");
+
+			}
+			else if (defhp <= 0) {
+			alert (" You won this time! Choose another enemy!")
+			role = 1;
+			$(".defender").html("<h1>Defender: </h1>");
+			$("#defhp").html("");
+			defhp = 0;
+			defpow = 0;
+			wincount ++
+			}
+
+			if (wincount == 5) {
+			alert("VICTORY!");
+			}
+
+
+
+
+
+});
+
+
+	
+
+
+
+});	
+	</script>
+		</body>
+</html>
